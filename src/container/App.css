@@ -1,0 +1,25 @@
+.login-form {
+  max-width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #FFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 300px;
+  margin-top: 450px;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
+}
+body {
+  /* background: rgba(138,150,174,1);
+  background: -moz-linear-gradient(-45deg, rgba(138,150,174,1) 0%, rgba(142,154,170,1) 52%, rgba(125,158,182,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(138,150,174,1)), color-stop(52%, rgba(142,154,170,1)), color-stop(100%, rgba(125,158,182,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(138,150,174,1) 0%, rgba(142,154,170,1) 52%, rgba(125,158,182,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(138,150,174,1) 0%, rgba(142,154,170,1) 52%, rgba(125,158,182,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(138,150,174,1) 0%, rgba(142,154,170,1) 52%, rgba(125,158,182,1) 100%);
+  background: linear-gradient(135deg, rgba(138,150,174,1) 0%, rgba(142,154,170,1) 52%, rgba(125,158,182,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a96ae', endColorstr='#7d9eb6', GradientType=1 ); */
+}
