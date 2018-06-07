@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Icon, Input, Button, Spin } from 'antd'
 const FormItem = Form.Item;
-
+import 'antd/dist/antd.css';
 import './Login.css';
 import axios from 'axios';   
 import { degirmenAuth, SERVERURL } from '../config/routes'
