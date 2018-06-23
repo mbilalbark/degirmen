@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './container/Login';
+import Router from './config/Router'
 import './index.css';
 
 ReactDOM.render(
-  <Login />,
+  <Router/>,
   document.getElementById('root')
 );
+
+
