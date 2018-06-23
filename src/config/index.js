@@ -1,5 +1,5 @@
 const SERVERURL = 'http://localhost/'
-
+ 
 const degirmenAuth = {
   isAuthenticated: false,
   user: null,
@@ -24,18 +24,5 @@ const degirmenAuth = {
     return this.user.type
   }
 }
-
-// const AuthButton = withRouter(({ history }) => (
-//   siuAuth.isAuthenticated ? (
-//     <Header signOut={() => {
-//       siuAuth.signout(() => {
-//         history.push('/')
-//       })
-//     }}/>
-//   ) 
-//   : ( 
-//     <br/>// <a href='/login'>Giriş Yap</a>
-//   )
-// ))
 
 export { degirmenAuth, SERVERURL }
