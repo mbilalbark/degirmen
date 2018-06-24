@@ -35,7 +35,7 @@ class Login extends React.Component {
     this.setState({ loading: true })
     axios({
       method: 'post',
-      url: `${SERVERURL}Degirmen/api/login.php`,
+      url: `${SERVERURL}degirmen-api/api/login.php`,
       headers : {
         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
     },
