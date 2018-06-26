@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import HeaderBar from '../../components/head';
-import SideBar from '../../components/sidebar';
-import Footer from '../../components/footer';
-import { Layout } from 'antd';
-
+import CostumerInfo from '../../components/customerInfo';
+import ProductTable from '../../components/productTable';
+import CostumerCall from '../../components/customerCall';
+import InvoiceInfo from  '../../components/InvoiceInfo';
 
 class ProductSale extends React.Component {
-  
+ 
+  handleChange(value) {
+    console.log(`selected ${value}`);
+  }
   
   render() {
     return (
-          <Footer/>
+   <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+    <CostumerCall/> 
+    <CostumerInfo/>
+    <ProductTable/>
+    <InvoiceInfo/>
+  </div>
     );
   }
 }
