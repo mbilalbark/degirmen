@@ -1,4 +1,4 @@
-const SERVERURL = 'http://localhost/'
+const SERVERURL = 'http://localhost:8080/'
  
 const degirmenAuth = {
   isAuthenticated: false,
