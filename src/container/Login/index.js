@@ -21,14 +21,14 @@ class Login extends React.Component {
   componentWillMount = () => 
   {  
     localStorage.clear();
-    // let user = localStorage.getItem('DegirmenLoginData')
-    // console.log(user)
-    // let newU
-    // if(user !== null) {
-    //   newU = JSON.parse(user)
-    //   console.log(newU)
-    //  this.apiUserLogin(user.adSoy, user.sifre)
-    // }
+    let user = localStorage.getItem('DegirmenLoginData')
+    console.log(user)
+    let newU   
+    if(user !== null) {
+      newU = JSON.parse(user)
+      console.log(newU)
+     this.apiUserLogin(user.adSoy, user.sifre)
+    }
   } 
 
   apiUserLogin = (uname = this.state.userName, psswrd = this.state.password) => {
@@ -53,7 +53,7 @@ class Login extends React.Component {
       }
       else if(res.status === 200)
       { 
-        console.log('Herşey ok');      
+        console.log('Herşey ok');   
          localStorage.setItem('DegirmenLoginData', JSON.stringify(res.data.info))
           degirmenAuth.authenticate(res.data.user, () => {
           this.setState({ redirectToReferrer: true })
@@ -94,7 +94,7 @@ onChangePassword = (e) => {
     else
     return (
       <Form onSubmit={this.handleLogin} className="login-form">
-        <h2>Degir</h2>
+        <h2>Degirmen</h2>
         { this.state.authError && <p>Bilgileriniz Hatalı</p> }
         <FormItem>
           {getFieldDecorator('userName', {
@@ -122,7 +122,7 @@ onChangePassword = (e) => {
         <FormItem>
           { 
             this.state.loading ? <Spin size="large" /> : 
-            <Button type="primary" htmlType="submit" className="login-form-button">
+            <Button type="normal" htmlType="submit" className="login-form-button">
               Giriş
             </Button>
            }          
