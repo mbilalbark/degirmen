@@ -23,14 +23,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
   const AuthButton = withRouter(({ history }) => (
     degirmenAuth.isAuthenticated ? (
-      <Layout>
+      <div>
       <Sidebar signOut={() => {
         degirmenAuth.signout(() => {
           history.push('/')
         })
       }}/>
-       <Header/>
-      </Layout>
+   
+      </div>
     ) 
     : ( 
       <br/>// <a href='/login'>Giriş Yap</a>
@@ -44,16 +44,17 @@ class ConfigRouter extends React.Component {
       <Router>
         <div>
         <Layout>
-        { <AuthButton/> }
-        <Layout>
-        <Content>
-          <Route exact={true} path="/" component={ Home }/>
-          <Route exact path="/login" component={Login} />
-          <PrivateRoute path="/product" component={Product} />
+         { <AuthButton/> }
+         <Layout>
+          <Header/>
+          <Content style={{ margin: '24px 16px 0' }}>
+           <Route exact={true} path="/" component={ Home }/>
+           <Route exact path="/login" component={Login} />
+           <PrivateRoute path="/product" component={Product} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>DEĞİRMEN</Footer>
           </Layout>
-          </Layout>
+         </Layout>
         </div>
       </Router>
       )
