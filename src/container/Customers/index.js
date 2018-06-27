@@ -4,12 +4,12 @@ import CustomerAdd from '../../components/customerAdd';
 class Customers extends React.Component {
 
     render (){
-        return (
+      return (
         <div> 
           <CustomerAdd/>
           <CustomerTable/>
         </div>
-     )
+      )
     }
 }
 export default Customers

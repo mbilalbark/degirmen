@@ -46,12 +46,12 @@ class Login extends React.Component {
     })
     .then((res) => {
       console.log(res);
-      if(res.status === 401)
+      if(res.data.status === 401)
       {
         this.setState({ authError: true, loading: false })
         console.log('Sikinti buyuk');   
       }
-      else if(res.status === 200)
+      else if(res.data.status === 200)
       { 
         console.log('Herşey ok');   
          localStorage.setItem('DegirmenLoginData', JSON.stringify(res.data.info))
