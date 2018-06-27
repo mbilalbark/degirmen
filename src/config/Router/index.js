@@ -4,8 +4,12 @@ import Login from '../../container/Login';
 import Product from '../../container/productSale';
 import Sidebar from '../../components/sidebar';
 import Header from '../../components/head';
+import Customers from '../../container/Customers';
+
+
 import { Layout, } from 'antd'
 import { degirmenAuth } from '../index.js'
+
 const { Content, Footer } = Layout
 const PrivateRoute = ({ component: Component, ...rest }) => (
  
@@ -51,6 +55,7 @@ class ConfigRouter extends React.Component {
            <Route exact={true} path="/" component={ Home }/>
            <Route exact path="/login" component={Login} />
            <PrivateRoute path="/product" component={Product} />
+           <PrivateRoute path="/customers" component={Customers} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>DEĞİRMEN</Footer>
           </Layout>
