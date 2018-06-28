@@ -1,5 +1,5 @@
 import React, {Componenet} from 'react'
-import { Popconfirm, Table } from 'antd'
+import { Popconfirm, Table,Button, Spin } from 'antd'
 import axios from 'axios';   
 import { SERVERURL } from '../../config/'
 class CustomerTable extends React.Component {
@@ -43,10 +43,10 @@ class CustomerTable extends React.Component {
           dataIndex: 'operation',
           render: (text, record) => {
             return (
-              this.state.dataSource.length > 1 ?
+              this.state.dataSource.length > 0 ?
               (
-                <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record.key)}>
-                  <a href="javascript:;">Delete</a>
+                <Popconfirm title="Silemek istediğinize eminiz?" okText='Evet' cancelText='Hayır' onConfirm={() => this.onDelete(record.key)}>
+                  <Button style={{marginLeft:10}} type="danger" >Sil</Button>
                 </Popconfirm>
               ) : null
             );
@@ -54,6 +54,7 @@ class CustomerTable extends React.Component {
         }]
         this.state = {
             dataSource: [],
+            spiner:false
           };
         }
      
@@ -69,19 +70,36 @@ class CustomerTable extends React.Component {
         }
       })
       .then((res) => {
-        console.log(res)
+        console.log(res.data.info)
+        let list = res.data.info  
+        list.forEach(function(element) {
+          element.key = element.Id
+        });
+        this.setState({ dataSource :list, count: this.state.count + 1})
+        this.setState({spiner:true})
       })
       .catch(err => console.log(err))
     }
 
+    onDelete = (id) => {
+      console.log(id)
+      const result = this.state.dataSource.filter(key => key.key!=id);
+      this.setState({dataSource:result})
+    }
+ 
     render() {
         const { dataSource } = this.state;
         const columns = this.columns;
-        return (
+        if(!this.state.spiner){
+         return(  <Spin size="large" style={{marginLeft:750}} />)    
+        } else {
+          return (
             <div>     
                 <Table dataSource={dataSource} columns={columns} />
             </div>
         )
+        }
+         
     }
 }
 export default CustomerTable
