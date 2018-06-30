@@ -18,8 +18,12 @@ render () {
           <span className="nav-text"><Link to="/customers" style={{color:'white'}}>Müşteriler</Link></span>
         </Menu.Item>
         <Menu.Item key="2">
-          <Icon type="barcode" />
-          <span className="nav-text"><Link to="/product" style={{color:'white'}}>Fatura</Link></span>
+          <Icon type="shopping-cart" />
+          <span className="nav-text"><Link to="/invoice" style={{color:'white'}}>Fatura</Link></span>
+        </Menu.Item>
+        <Menu.Item key="3">
+          <Icon type="shop" />
+          <span className="nav-text"><Link to="/product" style={{color:'white'}}>Ürünler</Link></span>
         </Menu.Item>
       </Menu>
     </Sider>
