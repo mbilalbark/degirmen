@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CostumerInfo from '../../components/customerInfo';
-import ProductTable from '../../components/productTable';
+import InvoiceTable from '../../components/invoiceTable';
 import CostumerCall from '../../components/customerCall';
 import InvoiceInfo from  '../../components/InvoiceInfo';
 
@@ -8,10 +8,10 @@ class ProductSale extends React.Component {
    
   render() {
     return (
-   <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+   <div>
     <CostumerCall/> 
     <CostumerInfo/>
-    <ProductTable/>
+    <InvoiceTable/>
     <InvoiceInfo/>
   </div>
     );
