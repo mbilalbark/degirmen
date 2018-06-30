@@ -39,13 +39,13 @@ class CustomerTable extends React.Component {
             title: 'Bakiye',
             dataIndex: 'bakiye',
         }, {
-          title: 'operation',
+          title: 'Düzenle',
           dataIndex: 'operation',
           render: (text, record) => {
             return (
               this.state.dataSource.length > 0 ?
               (
-                <Popconfirm title="Silemek istediğinize eminiz?" okText='Evet' cancelText='Hayır' onConfirm={() => this.onDelete(record.key)}>
+                <Popconfirm title="Silmek istediğinize emin misiniz?" okText='Evet' cancelText='Hayır' onConfirm={() => this.onDelete(record.key)}>
                   <Button style={{marginLeft:10}} type="danger" >Sil</Button>
                 </Popconfirm>
               ) : null
@@ -85,6 +85,22 @@ class CustomerTable extends React.Component {
       console.log(id)
       const result = this.state.dataSource.filter(key => key.key!=id);
       this.setState({dataSource:result})
+      axios({
+        method: 'post',
+        url: `${SERVERURL}degirmen-api/api/customer.php`,
+        headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      },
+        data: {
+         customerDelete:{
+           Id:id
+         }
+        }
+      })
+      .then((res) => {
+        console.log(res.data.info)
+      })
+      .catch(err => console.log(err))
     }
  
     render() {
