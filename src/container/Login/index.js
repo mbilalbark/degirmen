@@ -79,7 +79,7 @@ onChangePassword = (e) => {
       }
       else
       {
-        //hata
+        //hata 
       }
     });
   }
@@ -88,7 +88,7 @@ onChangePassword = (e) => {
     const { getFieldDecorator } = this.props.form;
     if(this.state.redirectToReferrer){
       console.log('product')
-      return(<Redirect to='/product'/>
+      return(<Redirect to='/invoice'/>
     )    
     }
     else
