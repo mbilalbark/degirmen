@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect,withRouter  } from "react-router-dom";
 import Login from '../../container/Login';
-import Product from '../../container/productSale';
+import Invoice from '../../container/productSale';
 import Sidebar from '../../components/sidebar';
 import Header from '../../components/head';
 import Customers from '../../container/Customers';
-
+import Product from '../../container/Products'
 
 import { Layout, } from 'antd'
 import { degirmenAuth } from '../index.js'
@@ -51,11 +51,12 @@ class ConfigRouter extends React.Component {
          { <AuthButton/> }
          <Layout>
           <Header/>
-          <Content style={{ margin: '24px 16px 0' }}>
+          <Content style={{ padding: 24, background: '#fff', minHeight: 360 }}>
            <Route exact={true} path="/" component={ Home }/>
            <Route exact path="/login" component={Login} />
-           <PrivateRoute path="/product" component={Product} />
+           <PrivateRoute path="/invoice" component={Invoice} />
            <PrivateRoute path="/customers" component={Customers} />
+           <PrivateRoute path="/product" component={Product} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>DEĞİRMEN</Footer>
           </Layout>
