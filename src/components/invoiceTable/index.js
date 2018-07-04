@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Popconfirm } from 'antd';
+import { Table, Popconfirm,Button } from 'antd';
 
 class InvoiceTable extends Component {
 
@@ -7,29 +7,32 @@ class InvoiceTable extends Component {
     super(props);
     this.columns = [{
       title: 'Ürün Adı',
-      dataIndex: 'productName',
+      dataIndex: 'cinsi',
       width: '30%',
     }, {
       title: 'Adet/Miktar',
-      dataIndex: 'piece',
+      dataIndex: 'miktar',
     }, {
       title: 'Kilo',
-      dataIndex: 'kilo',
+      dataIndex: 'kg',
     }, {
       title: 'Fiyat',
-      dataIndex: 'price',
+      dataIndex: 'fiyat',
+    },{
+      title: 'Kdv',
+      dataIndex: 'kdv',
     },{
       title: 'Toplam Fiyat',
-      dataIndex: 'totalPrice',
+      dataIndex: 'toplam',
     },{
       title: 'Düzenle',
       dataIndex: 'operation',
       render: (text, record) => {
         return (
-          this.state.dataSource.length > 1 ?
+          this.props.product.length > 0 ?
           (
-            <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record.key)}>
-              <a href="javascript:;">Sil</a>
+            <Popconfirm title="Sure to delete?" onConfirm={(e) => this.props.sil(record.key)}>
+              <Button style={{marginLeft:10}} type="danger" >Sil</Button>
             </Popconfirm>
           ) : null
         );
@@ -55,12 +58,14 @@ class InvoiceTable extends Component {
     };
   }
 
+
+
     render() {
-      const { dataSource } = this.state;
+    const { dataSource } = this.props.product;
     const columns = this.columns;
     return (    
       <div>
-        <Table size={'small'} dataSource={ dataSource } columns={ columns } />
+        <Table size={'small'} dataSource={ this.props.product } columns={ columns } />
       </div>
     );
   }
