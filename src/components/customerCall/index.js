@@ -18,6 +18,8 @@ class CustomerCall extends React.Component {
   }
 
 componentWillMount () {
+ products = [];
+ customers = [];
  this.productList()
  this.customerList()
 }
