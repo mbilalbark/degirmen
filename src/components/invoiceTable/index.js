@@ -9,27 +9,34 @@ class InvoiceTable extends Component {
       title: 'Ürün Adı',
       dataIndex: 'cinsi',
       width: '30%',
+      key:0
     }, {
       title: 'Adet/Miktar',
       dataIndex: 'miktar',
+      key:1
     }, {
       title: 'Kilo',
       dataIndex: 'kg',
+      key:2
     }, {
       title: 'Fiyat',
       dataIndex: 'fiyat',
+      key:3
     },{
       title: 'Kdv',
       dataIndex: 'kdv',
+      key:4
     },{
       title: 'Toplam Fiyat',
       dataIndex: 'toplam',
+      key:5
     },{
       title: 'Düzenle',
       dataIndex: 'operation',
+      key:6,
       render: (text, record) => {
         return (
-          this.props.product.length > 0 ?
+          record.key > 0 ?
           (
             <Popconfirm title="Sure to delete?" onConfirm={(e) => this.props.sil(record.key)}>
               <Button style={{marginLeft:10}} type="danger" >Sil</Button>
