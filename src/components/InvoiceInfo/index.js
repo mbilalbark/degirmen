@@ -1,4 +1,4 @@
-import React, {Componenet} from 'react'
+import React, {} from 'react'
 
 class InvoiceInfo extends React.Component {
 

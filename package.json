@@ -10,6 +10,7 @@
   "dependencies": {
     "antd": "^3.6.1",
     "axios": "^0.18.0",
+    "electron-packager": "^12.1.0",
     "moment": "^2.22.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -19,7 +20,7 @@
   "main": "src/electron-starter.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && move build ../server/build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {} from 'react';
 import CostumerInfo from '../../components/customerInfo';
 import InvoiceTable from '../../components/invoiceTable';
 import CostumerCall from '../../components/customerCall';

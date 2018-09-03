@@ -40,7 +40,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       <br/>// <a href='/login'>Giriş Yap</a>
     )
   ))
-  
+const Home = () => <Redirect to="/invoice/" /> 
 class ConfigRouter extends React.Component {
 
     render() {
@@ -52,7 +52,7 @@ class ConfigRouter extends React.Component {
          <Layout>
           <Header/>
           <Content style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-           <Route exact={true} path="/" component={ Home }/>
+           <Route exact={false} path="/" component={ Login }/>
            <Route exact path="/login" component={Login} />
            <PrivateRoute path="/invoice" component={Invoice} />
            <PrivateRoute path="/customers" component={Customers} />
@@ -66,5 +66,5 @@ class ConfigRouter extends React.Component {
       )
     }
   }
-const Home = () => <Redirect to="/product/" /> 
+
 export default ConfigRouter

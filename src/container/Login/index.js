@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {} from 'react';
 import { Redirect  } from "react-router-dom";
 import { Form, Icon, Input, Button, Spin } from 'antd'
 const FormItem = Form.Item;
 import 'antd/dist/antd.css';
 import './Login.css';
-import axios from 'axios';   
+import axios from 'axios';
 import { degirmenAuth, SERVERURL } from '../../config/'
 
 class Login extends React.Component {
@@ -18,18 +18,19 @@ class Login extends React.Component {
     userid: null
   }
 
-  componentWillMount = () => 
-  {  
-    localStorage.clear();
-    let user = localStorage.getItem('DegirmenLoginData')
-    console.log(user)
-    let newU   
-    if(user !== null) {
-      newU = JSON.parse(user)
-      console.log(newU)
-     this.apiUserLogin(user.adSoy, user.sifre)
-    }
-  } 
+  componentWillMount = () =>
+  {
+    // localStorage.clear();
+    // let user = localStorage.getItem('DegirmenLoginData')
+    // //console.log(user)
+    // let newU
+    // if(user !== null) {
+    //   newU = JSON.parse(user)
+    //   //console.log(newU)
+  //}
+    
+    this.apiUserLogin()
+  }
 
   apiUserLogin = (uname = this.state.userName, psswrd = this.state.password) => {
     this.setState({ loading: true })
@@ -49,11 +50,11 @@ class Login extends React.Component {
       if(res.data.status === 401)
       {
         this.setState({ authError: true, loading: false })
-        console.log('Sikinti buyuk');   
+        console.log('Sikinti buyuk');
       }
       else if(res.data.status === 200)
-      { 
-        console.log('Herşey ok');   
+      {
+        console.log('Herşey ok');
          localStorage.setItem('DegirmenLoginData', JSON.stringify(res.data.info))
           degirmenAuth.authenticate(res.data.user, () => {
           this.setState({ redirectToReferrer: true })
@@ -79,7 +80,7 @@ onChangePassword = (e) => {
       }
       else
       {
-        //hata 
+        //hata
       }
     });
   }
@@ -89,7 +90,7 @@ onChangePassword = (e) => {
     if(this.state.redirectToReferrer){
       console.log('product')
       return(<Redirect to='/invoice'/>
-    )    
+    )
     }
     else
     return (
@@ -100,8 +101,8 @@ onChangePassword = (e) => {
           {getFieldDecorator('userName', {
             rules: [{ required: true, message: 'Kullanıcı adınızı giriniz!' }],
           })(
-            <Input 
-              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} 
+            <Input
+              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Kullanıcı Adı"
               onChange={this.onChangeUserName}
             />
@@ -111,21 +112,21 @@ onChangePassword = (e) => {
           {getFieldDecorator('password', {
             rules: [{ required: true, message: 'Şifrenizi Giriniz!' }],
           })(
-            <Input 
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} 
-              type="password" 
+            <Input
+              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              type="password"
               placeholder="Şifre"
               onChange={this.onChangePassword}
             />
           )}
         </FormItem>
         <FormItem>
-          { 
-            this.state.loading ? <Spin size="large" /> : 
+          {
+            this.state.loading ? <Spin size="large" /> :
             <Button type="normal" htmlType="submit" className="login-form-button">
               Giriş
             </Button>
-           }          
+           }
         </FormItem>
       </Form>
     );

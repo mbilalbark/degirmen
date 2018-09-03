@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {} from 'react'
 import ProductsAdd from '../../components/productAdd'
 import ProductList from '../../components/prodcutsTable'
 

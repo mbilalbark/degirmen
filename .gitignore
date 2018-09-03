@@ -3,11 +3,13 @@
 # dependencies
 node_modules
 
+
 # testing
 coverage
 
 # production
 build
+degirmen-win32-x64
 
 # misc
 .DS_Store

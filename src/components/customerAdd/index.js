@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{} from 'react'
 import { Modal, Button, Form, Input, Icon } from 'antd'
 import axios from 'axios';   
 import { SERVERURL } from '../../config/'

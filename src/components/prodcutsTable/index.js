@@ -1,4 +1,4 @@
-import React, {Componenet} from 'react'
+import React, {} from 'react'
 import { Popconfirm, Table,Button, Spin } from 'antd'
 import axios from 'axios';   
 import { SERVERURL } from '../../config/'

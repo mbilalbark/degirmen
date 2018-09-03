@@ -1,9 +1,8 @@
-import React, {Componenet} from 'react'
-import { Select,InputNumber, Button,Form } from 'antd';
+import React, {} from 'react'
+import { Select,InputNumber, Button} from 'antd';
 import axios from 'axios';   
 import { SERVERURL } from '../../config/'
 const Option = Select.Option;
-const FormItem = Form.Item;
 const products = [];
 const customers = [];
 class CustomerCall extends React.Component {

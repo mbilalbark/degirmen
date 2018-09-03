@@ -1,4 +1,4 @@
-import React, {Componenet} from 'react'
+import React, {} from 'react'
 // import { Form, Icon, Input, Button, Spin } from 'antd'
 import moment from 'moment'
 class CustomerInfo extends React.Component {
